@@ -1,0 +1,287 @@
+/* ============================================================
+   🌿 style.css – Simple, Unified, and Eye-Friendly System Theme
+   Works for: login, register, dashboard, tables, and forms
+   ============================================================ */
+
+/* 🎨 Theme Colors */
+:root {
+  --primary: #4a90e2;      /* Soft blue accent */
+  --primary-hover: #3a7bd5;
+  --background: #f5f7fa;   /* Calm neutral background */
+  --card-bg: #ffffff;
+  --text: #333333;
+  --muted: #777;
+  --border: #dcdfe3;
+  --success: #2ecc71;
+  --error: #e74c3c;
+}
+
+/* 🧱 Base Layout */
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* 🧭 Containers */
+.container, .centered-form {
+  width: 100%;
+  max-width: 700px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(74, 144, 226, 0.15),
+              0 2px 6px rgba(0, 0, 0, 0.06);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* 🧍 Centered Form (Login/Register) */
+.centered-form {
+  max-width: 400px;
+  text-align: center;
+  margin: 0;
+  box-shadow: 0 10px 30px rgba(74, 144, 226, 0.25),
+              0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.centered-form:hover {
+  box-shadow: 0 12px 36px rgba(74, 144, 226, 0.35),
+              0 6px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+}
+
+/* 🏷️ Headings */
+h1, h2, h3 {
+  color: var(--primary);
+  margin-top: 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+h1 { font-size: 26px; }
+h2 { font-size: 22px; }
+h3 { font-size: 18px; }
+
+/* 🧾 Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+label {
+  text-align: left;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 6px rgba(74, 144, 226, 0.25);
+}
+
+/* 🔘 Buttons (Base) */
+button {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  font-size: 15px;
+}
+
+button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.25);
+}
+
+button:disabled {
+  background: #b0c8e8;
+  cursor: not-allowed;
+}
+
+/* 🧭 Action Buttons (Dashboard Controls) */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.btn-manage, .btn-create {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 20px;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.btn-manage {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-manage:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.btn-create {
+  background: var(--success);
+  color: #fff;
+}
+
+.btn-create:hover {
+  background: #27ae60;
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
+
+/* 🔗 Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Success / ❌ Error Messages */
+.success {
+  color: var(--success);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.error {
+  color: var(--error);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* 📋 Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #f1f4f8;
+  font-weight: 600;
+  color: #444;
+}
+
+tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+/* 🧭 Header & Navigation */
+header {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 3px 10px rgba(74, 144, 226, 0.15);
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+header h2 {
+  color: var(--primary);
+  margin: 0;
+}
+
+header nav a {
+  margin-left: 15px;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* 📊 Dashboard Layouts */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--primary);
+  font-size: 18px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .container, .centered-form, header {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  table, th, td {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
